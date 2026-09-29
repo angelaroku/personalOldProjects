@@ -1,0 +1,33 @@
+package ies.piobaroja.dam2.accesoadatos.studyapp.vista;
+
+import javax.swing.JButton;
+import javax.swing.JPanel;
+
+import ies.piobaroja.dam2.accesoadatos.studyapp.controlador.FichaConsultarControlador;
+
+public class FichaConsultarVista extends JPanel{
+
+	private static final long serialVersionUID = 1L;
+	
+	private JButton btnNewButtonConsultarFicha;
+	
+	private FichaConsultarControlador controlador;
+
+	
+	public FichaConsultarVista() {
+		setLayout(null);
+
+
+		btnNewButtonConsultarFicha = new JButton("Consultar");
+		btnNewButtonConsultarFicha.setBounds(172, 196, 105, 27);
+		add(btnNewButtonConsultarFicha);
+		//conexion de boton con controlador
+		btnNewButtonConsultarFicha.addActionListener(controlador);
+
+		
+	}
+	
+	//Metodos que recogen datos relacionados con más clases que la vista
+	
+
+}
