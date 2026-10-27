@@ -1,0 +1,40 @@
+﻿<Page
+    x:Class="App1SocialLink.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App1SocialLink"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="#FFC2F2FB" d:DesignHeight="1978.986" d:DesignWidth="1294.203">
+
+    
+ 
+    <Grid Margin="40"> 
+        <!--<Grid para definir mis filas-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--Grid grande pantalla completa , este grid solo para el logo y el nombre de la app con margen de 10 arriba y abajo -->
+        <Grid Grid.Row="0" Margin="0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Column="0" Source="/Assets/SocialLink.png" Width="60"  Height="60" />
+            <TextBlock Grid.Column="1" Text="Social Link" VerticalAlignment="Center" FontSize="35" Margin="15,0,0,0"/>
+        </Grid>
+        
+        <!--Agrpador stack panel con atrib diferentes a grid:  para uso de controles, botones y demas-->
+        <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" MaxWidth="400" Spacing="30">
+            <Button Content="Entrar con usuario" HorizontalAlignment="Center" Height="82" Width="400" Click="Button_EntradaConUsuario_Click" FontSize="32"/>
+            <Button Content="Entrar sin usuario" HorizontalAlignment="Center" Height="82" Width="400" Click="Button_EntradaSinUsuario_Click" FontSize="32"/>
+            <Button Content="Crear usuario" HorizontalAlignment="Center" Height="82"  Width="400" Click="Button_CrearNuevoUsuario_Click" FontSize="32"/>
+
+        </StackPanel>
+        
+    </Grid>
+</Page>

@@ -1,0 +1,4 @@
+var _cosa1_8g_8i_8cs =
+[
+    [ "App1SocialLink.Components.Cosa1", "class_app1_social_link_1_1_components_1_1_cosa1.html", "class_app1_social_link_1_1_components_1_1_cosa1" ]
+];

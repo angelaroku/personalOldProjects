@@ -1,0 +1,52 @@
+﻿<Page
+    x:Class="App1SocialLink.CrearNuevoUsuarioPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App1SocialLink"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="#FFC2F2FB" d:DesignHeight="1978.986" d:DesignWidth="1294.203">
+
+
+    <Grid Margin="40">
+        <!--Uso misma estructura de grid y stack panels pra todas las paginas-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Column="0" Source="/Assets/SocialLink.png" Width="60"  Height="60" />
+            <TextBlock Grid.Column="1" Text="Social Link" VerticalAlignment="Center" FontSize="35" Margin="20,0,0,0"/>
+        </Grid>
+
+        <!--Formulario nuevo usuario + bton VOLVER (con metodo navigate en el .xaml.cs)-->
+        <!--A veces falla la lectura ASCII(no se arreglarlo)-->
+        <StackPanel  Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" MaxWidth="400" Spacing="10">
+            <Button x:ConnectionId='2' Content="Volver" VerticalAlignment="Top" Height="50"  Width="100" FontSize="25"                     />
+
+            <TextBlock Text="Nombre: " FontSize="28" />
+            <TextBox Text="Escriba un nombre de usuario.." Height="50" FontSize="28"/>
+
+            <TextBlock Text="Correo electr�nico: " FontSize="28" />
+            <TextBox Text="Escriba su correo.." Height="50" FontSize="28"/>
+
+            <TextBlock Text="Contrase�a: " FontSize="28" />
+            <TextBox Text="Escriba su contrase�a.."  Height="50" FontSize="28"/>
+
+            <TextBlock Text="Confirmaci�n Contrase�a: " FontSize="30" />
+            <TextBox Text="Confirme su contrase�a.. "  Height="50" FontSize="28"/>
+
+            <Button Content="Crear usuario" HorizontalAlignment="Center" Height="60"  Width="400" FontSize="30"/>
+
+        </StackPanel>
+
+    </Grid>
+</Page>
+
