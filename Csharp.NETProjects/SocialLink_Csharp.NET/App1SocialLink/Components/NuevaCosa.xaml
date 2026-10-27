@@ -1,0 +1,21 @@
+<UserControl x:Class="App1SocialLink.Components.NuevaCosa"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="using:App1SocialLink.Components"
+             Width="270" Height="120">
+    
+    <Border x:Name="TagBorder"
+            Background="#FFEFEFEF"
+            CornerRadius="6"
+            Padding="8,3"
+            VerticalAlignment="Top">
+        
+        <StackPanel Orientation="Horizontal" Spacing="6" HorizontalAlignment="Left">
+            <Rectangle Fill="LightGray" Width="30" Height="30" RadiusX="6" RadiusY="6"/>
+            <!--Bindeando el simbolo y el texto con la variable del cs -->
+            <SymbolIcon x:Name="TagIcon" Symbol="{x:Bind csNuevoIconoNuevaCosa}" />
+            <TextBlock x:Name="TagTextBlock" Text="{x:Bind csTextoDeMiNuevaCosa}" />
+            
+        </StackPanel>
+    </Border>
+</UserControl>

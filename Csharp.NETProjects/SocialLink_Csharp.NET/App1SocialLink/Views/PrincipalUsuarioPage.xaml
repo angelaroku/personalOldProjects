@@ -1,0 +1,41 @@
+<Page
+    x:Class="App1SocialLink.PrincipalUsuarioPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App1SocialLink"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+  
+    Background="#FFC2F2FB" d:DesignHeight="1978.986" d:DesignWidth="1294.203">
+
+
+    <Grid Margin="40">
+        <!--Uso misma estructura de grid y stack panels pra todas las paginas-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Column="0" Source="/Assets/SocialLink.png" Width="80"  Height="80" />
+            <TextBlock Grid.Column="1" Text="Social Link" VerticalAlignment="Center" FontSize="48" Margin="20,0,0,0"/>
+        </Grid>
+
+        <!--Pantalla principal dentro de la app + bton VOLVER (con metodo navigate en el .xaml.cs)-->
+        <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" MaxWidth="600" Spacing="30">
+            
+            <Button Content="Biblioteca propia" VerticalAlignment="Top" Height="82" Width="600" FontSize="38"/>
+            <Button Content="Biblioteca compartida" VerticalAlignment="Top" Height="82" Width="600"  FontSize="38"/>
+            <Button Content="Comunidad" VerticalAlignment="Top" Height="82" Width="600" FontSize="38"/>
+            <Button Content="Mis contactos" VerticalAlignment="Top" Height="82" Width="600" FontSize="38"/>
+
+        </StackPanel>
+
+    </Grid>
+</Page>
