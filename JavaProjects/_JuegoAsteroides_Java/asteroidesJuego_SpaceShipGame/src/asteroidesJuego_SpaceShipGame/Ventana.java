@@ -2,6 +2,7 @@ package asteroidesJuego_SpaceShipGame;
 
 
 import java.awt.Canvas;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
@@ -16,6 +17,10 @@ public class Ventana extends JFrame implements Runnable{
 	private BufferStrategy bs;
 	private Graphics g;
 	
+	private final int FPS = 60;
+	private double TARGETTIME = 1000000000/FPS;
+	private double delta = 0;
+	private int AVERAGEFPS = FPS;
 	
 	
 	
@@ -42,8 +47,9 @@ public class Ventana extends JFrame implements Runnable{
 
 	}
 	
+	int x = 0;
 	private void update() {
-		
+		x++;
 	}
 	
 	private void draw() {
@@ -55,10 +61,12 @@ public class Ventana extends JFrame implements Runnable{
 		}
 		
 		g=bs.getDrawGraphics();
-		
-		
-		g.drawRect(0, 0, 100, 100);
-		
+		// ----
+		g.clearRect(0, 0, WIDTH, HEIGHT);
+		//g.drawRect(x, 0, 100, 100);
+		g.setColor(Color.black);
+		g.drawString(""+AVERAGEFPS, 100, 100);
+		//-----
 		g.dispose();
 		bs.show();
 		
@@ -67,11 +75,40 @@ public class Ventana extends JFrame implements Runnable{
 	
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
+		
+		long now = 0;
+		long lastTime = System.nanoTime();
+		int frames = 0;
+		long time = 0;
+		
 		
 		while(running) {
-			update();
-			draw();
+			now = System.nanoTime();
+			delta += (now - lastTime) / TARGETTIME;
+			time += (now - lastTime);
+			lastTime = now;
+			
+			if (delta >= 1) {
+				update();
+				draw();
+				delta --;
+				frames ++;
+				System.out.print(frames);
+
+				
+			}
+			
+			if (time >= 1000000000) {
+				
+				AVERAGEFPS = frames;
+				
+				//System.out.print(frames);
+				frames = 0;
+				time = 0;
+				
+				
+			}
+			
 		}
 		
 		stop();
