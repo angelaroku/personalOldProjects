@@ -1,3 +1,8 @@
+/*tutoriales: 
+ 
+ https://youtube.com/playlist?list=PLHwsL1JI79K1CIS9P3Ik9ilOzMyYKElfG&si=JtWGrq3-Gn9EB3-X
+
+*/
 package asteroidesJuego_SpaceShipGame;
 
 
@@ -8,6 +13,8 @@ import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 
 import javax.swing.JFrame;
+
+import graphics.Assets;
 
 public class Ventana extends JFrame implements Runnable{
 	public static final int WIDTH = 800, HEIGHT = 600;
@@ -47,9 +54,9 @@ public class Ventana extends JFrame implements Runnable{
 
 	}
 	
-	int x = 0;
+
 	private void update() {
-		x++;
+
 	}
 	
 	private void draw() {
@@ -62,16 +69,29 @@ public class Ventana extends JFrame implements Runnable{
 		
 		g=bs.getDrawGraphics();
 		// ----
-		g.clearRect(0, 0, WIDTH, HEIGHT);
+		g.setColor(Color.BLACK);
+
+		g.fillRect(0, 0, WIDTH, HEIGHT);
 		//g.drawRect(x, 0, 100, 100);
-		g.setColor(Color.black);
-		g.drawString(""+AVERAGEFPS, 100, 100);
+		
+		g.drawImage(Assets.player, 100, 100, null);
+		 
+		g.drawString(""+AVERAGEFPS, 10, 20);
 		//-----
 		g.dispose();
 		bs.show();
 		
 		
 	}
+	
+	
+	//__
+	private void init() {
+		Assets.init();
+	}
+	
+	//----------
+	
 	
 	@Override
 	public void run() {
@@ -81,6 +101,7 @@ public class Ventana extends JFrame implements Runnable{
 		int frames = 0;
 		long time = 0;
 		
+		init();
 		
 		while(running) {
 			now = System.nanoTime();
